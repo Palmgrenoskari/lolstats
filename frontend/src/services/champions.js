@@ -1,6 +1,6 @@
 import axios from 'axios'
 // Update this as needed
-const version = '13.23.1'
+const version = '13.24.1'
 const baseUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`
 
 const getAll = async () => {
