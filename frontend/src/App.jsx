@@ -28,16 +28,13 @@ const App = () => {
     setItems(data)
   }
 
-
-  console.log(champions);
-  console.log(items);
   return (
     <div>
       <Menu/>
       <h1>LEAGUE RULES</h1>
       <Routes>
         <Route path='/' element= {<Main />} />
-        <Route path='/champions' element= {<Champions />} />
+        <Route path='/champions' element= {<Champions champions={champions?.data} />} />
         <Route path='/items' element= {<Items />} />
         <Route path='/leaderboards' element = {<Leaderboards />} />
       </Routes>
