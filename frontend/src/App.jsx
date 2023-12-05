@@ -2,30 +2,24 @@ import { useEffect, useState } from 'react'
 import championService from './services/champions'
 
 const App = () => {
-  const [a, setA] = useState(null)
+  const [champions, setChampions] = useState(null)
 
   useEffect(() => {
-    fetchChampion('Aatrox')
+    fetchChampions()
   }, [])
 
-  const fetchChampion = async (champion) => {
-    const data = await championService.getChampion(champion)
-    setA(data)
+  const fetchChampions = async () => {
+    const data = await championService.getAll()
+    setChampions(data)
   }
 
-  if (!a) {
+  if (!champions) {
     return <div>Loading....</div>
   }
 
   return (
     <div>
       <h1>LEAGUE RULES</h1>
-      <div>
-        Type: {a.type} <br/>
-        Name: {a.data.Aatrox.name} <br/>
-        Title: {a.data.Aatrox.title} <br/>
-      </div>
-      {}
     </div>
   )
 }
