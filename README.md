@@ -8,6 +8,8 @@ A few great already existing LoL information sites
 * https://www.op.gg/
 * https://mobalytics.gg/lol
 
+## Dev Roadmap
+
 Some kind of rough roadmap of the top of my head. Truth is its definitely not going to be this organized heh:
 
 1. Front: Achieve some basic look, have a navbar with a few different routes that each show some kind of information about league
