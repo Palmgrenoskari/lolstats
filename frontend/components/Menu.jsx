@@ -2,22 +2,29 @@ import { Link } from 'react-router-dom'
 
 const Menu = () => {
 
-    const paddingR = {
-		paddingRight: 5
+    const titleStyle = {
+        color: '#F2BF43',
+        paddingRight: 20,
+        fontSize: 24
+    }
+    const linkStyle = {
+		paddingRight: 5,
+        color: '#A9A9A9'
     }
 
     const background = {
-		background: '#F0F8FF',
+		background: '#000000',
         padding: 10
 	}
 
     return (
 
         <div style={background}>
-            <Link style={paddingR} to="/">Home</Link>
-            <Link style={paddingR} to="/champions">Champions</Link>
-            <Link style={paddingR} to="/items">Items</Link>
-            <Link to="/leaderboards">Leaderboards</Link>
+            <span style={titleStyle}>LoLStats</span>
+            <Link style={linkStyle} to="/">Home</Link>
+            <Link style={linkStyle} to="/champions">Champions</Link>
+            <Link style={linkStyle} to="/items">Items</Link>
+            <Link style={linkStyle} to="/leaderboards">Leaderboards</Link>
         </div>
     )
 }
