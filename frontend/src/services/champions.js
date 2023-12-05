@@ -5,6 +5,7 @@ const baseUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/c
 
 const getAll = async () => {
     const response = await axios.get(baseUrl)
+    console.log('champions', response.data)
     return response.data
 }
 
