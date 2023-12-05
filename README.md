@@ -1,4 +1,4 @@
-# lolstats
+# LoLStats
 This will be a learning fullstack project that shows information about League of Legends. Very excited!
 
 League of Legends has a great API: https://developer.riotgames.com/apis
