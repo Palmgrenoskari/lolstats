@@ -1,5 +1,6 @@
 // Implement search filter
 // Add link to images for individual champion views
+import { Link } from 'react-router-dom'
 
 const Champions = ({ champions }) => {
 
@@ -15,12 +16,13 @@ const Champions = ({ champions }) => {
     return ( 
         <div>
             {Object.values(champions).map(c => (
-                <img
-                    style={imgPadding}
-                    src={`https://ddragon.leagueoflegends.com/cdn/13.23.1/img/champion/${c.image.full}`}
-                    alt={c.id}
-                    key={c.key}
-                />
+                <Link key={c.key} to={`/champions/${c.id}`}>
+                    <img
+                        style={imgPadding}
+                        src={`https://ddragon.leagueoflegends.com/cdn/13.23.1/img/champion/${c.image.full}`}
+                        alt={c.id}
+                    />
+                </Link>
             ))}
         </div>
     );
