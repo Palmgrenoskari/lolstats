@@ -1,3 +1,6 @@
+// Need to figure out how to filter out some strange duplicates in the json
+// Need to implement a search bar and radio button etc for choosing map
+
 import { Link } from "react-router-dom";
 
 const Items = ({ items }) => {
@@ -13,15 +16,20 @@ const Items = ({ items }) => {
 
   return (
     <div>
-      {Object.values(items).map((item) => (
-        <Link key={item.name} to={`/items/${item.name}`}>
-          <img
-            style={imgPadding}
-            src={`https://ddragon.leagueoflegends.com/cdn/13.23.1/img/item/${item.image.full}`}
-            alt={item.name}
-          />
-        </Link>
-      ))}
+      {/* Include a filter here to only show purchasable items */}
+      {Object.values(items)
+        .filter((item) => item.gold.purchasable === true)
+        .map((item) => (
+          <Link key={item.image.full} to={`/items/${item.name}`}>
+            <img
+              style={imgPadding}
+              src={`https://ddragon.leagueoflegends.com/cdn/13.23.1/img/item/${item.image.full}`}
+              alt={item.name}
+              width={40}
+              height={40}
+            />
+          </Link>
+        ))}
     </div>
   );
 };
