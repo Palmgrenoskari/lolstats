@@ -9,6 +9,7 @@ import Champion from "../components/Champion";
 import Main from "../components/Main";
 import Leaderboards from "../components/Leaderboards";
 import Items from "../components/Items";
+import Item from "../components/Item";
 
 const App = () => {
   const [champions, setChampions] = useState(null);
@@ -29,10 +30,18 @@ const App = () => {
     setItems(data);
   };
 
-  const match = useMatch("/champions/:id");
+  const championMatch = useMatch("/champions/:id");
   const champion =
-    match && champions
-      ? Object.values(champions.data).find((a) => a.id === match.params.id)
+    championMatch && champions
+      ? Object.values(champions.data).find(
+          (c) => c.id === championMatch.params.id
+        )
+      : null;
+
+  const itemMatch = useMatch("/items/:id");
+  const item =
+    itemMatch && items
+      ? Object.values(items.data).find((i) => i.name === itemMatch.params.id)
       : null;
 
   return (
@@ -50,6 +59,7 @@ const App = () => {
           element={<Champion champion={champion} />}
         />
         <Route path="/items" element={<Items items={items?.data} />} />
+        <Route path="/items/:id" element={<Item item={item} />} />
         <Route path="/leaderboards" element={<Leaderboards />} />
       </Routes>
     </div>
