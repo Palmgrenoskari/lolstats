@@ -40,7 +40,7 @@ const App = () => {
         <Route path='/' element= {<Main />} />
         <Route path='/champions' element= {<Champions champions={champions?.data} />} />
         <Route path='/champions/:id' element= {<Champion champion={champion}/>} />
-        <Route path='/items' element= {<Items />} />
+        <Route path='/items' element= {<Items items={items?.data} />} />
         <Route path='/leaderboards' element = {<Leaderboards />} />
       </Routes>
     </div>
