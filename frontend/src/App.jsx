@@ -46,22 +46,26 @@ const App = () => {
 
   return (
     <div>
-      <Menu />
-      <h1>LEAGUE RULES</h1>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route
-          path="/champions"
-          element={<Champions champions={champions?.data} />}
-        />
-        <Route
-          path="/champions/:id"
-          element={<Champion champion={champion} />}
-        />
-        <Route path="/items" element={<Items items={items?.data} />} />
-        <Route path="/items/:id" element={<Item item={item} />} />
-        <Route path="/leaderboards" element={<Leaderboards />} />
-      </Routes>
+      <div className="nav-bar">
+        <Menu />
+      </div>
+      <div className="main-view">
+        <h1>LEAGUE RULES</h1>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route
+            path="/champions"
+            element={<Champions champions={champions?.data} />}
+          />
+          <Route
+            path="/champions/:id"
+            element={<Champion champion={champion} />}
+          />
+          <Route path="/items" element={<Items items={items?.data} />} />
+          <Route path="/items/:id" element={<Item item={item} />} />
+          <Route path="/leaderboards" element={<Leaderboards />} />
+        </Routes>
+      </div>
     </div>
   );
 };
