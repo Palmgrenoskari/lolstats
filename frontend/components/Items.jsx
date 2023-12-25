@@ -16,6 +16,7 @@ const Items = ({ items }) => {
 
   return (
     <div>
+      <h2>Items</h2>
       {/* Include a filter here to only show purchasable items */}
       {Object.values(items)
         .filter((item) => item.gold.purchasable === true)

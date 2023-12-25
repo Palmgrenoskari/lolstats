@@ -14,6 +14,7 @@ const Champions = ({ champions }) => {
   };
   return (
     <div>
+      <h2>Champions</h2>
       {Object.values(champions).map((c) => (
         <Link key={c.key} to={`/champions/${c.id}`}>
           <img
