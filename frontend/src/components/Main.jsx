@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import summonerService from "../src/services/summoners";
+import summonerService from "../services/summoners";
 
 const Main = () => {
   const [summonerData, setSummonerData] = useState(null);

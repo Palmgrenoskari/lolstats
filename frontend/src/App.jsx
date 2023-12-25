@@ -3,13 +3,13 @@ import { Routes, Route, useMatch } from "react-router-dom";
 import championService from "./services/champions";
 import itemService from "./services/items";
 
-import Menu from "../components/Menu";
-import Champions from "../components/Champions";
-import Champion from "../components/Champion";
-import Main from "../components/Main";
-import Leaderboards from "../components/Leaderboards";
-import Items from "../components/Items";
-import Item from "../components/Item";
+import Menu from "./components/Menu";
+import Champions from "./components/Champions";
+import Champion from "./components/Champion";
+import Main from "./components/Main";
+import Leaderboards from "./components/Leaderboards";
+import Items from "./components/Items";
+import Item from "./components/Item";
 
 const App = () => {
   const [champions, setChampions] = useState(null);
