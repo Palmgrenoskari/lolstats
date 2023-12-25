@@ -1,7 +1,10 @@
 import express from "express";
+import cors from "cors";
+
 import { API_KEY } from "./utils/config.js";
 
 const app = express();
+app.use(cors());
 const port = 3000;
 
 // Temporary
