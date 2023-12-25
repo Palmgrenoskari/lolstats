@@ -1,10 +1,9 @@
 import express from "express";
-import config from "./utils/config";
+import { API_KEY } from "./utils/config.js";
 
 const app = express();
 const port = 3000;
 
-const API_KEY = config.API_KEY;
 // Temporary
 const player_name = "Nahg";
 
@@ -13,7 +12,9 @@ const API_URL = `https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-nam
 app.get("/api/summoner", async (req, res) => {
   try {
     const response = await fetch(API_URL);
-    res.json(response.data);
+    const data = await response.json();
+    console.log(data.name);
+    res.json(data);
   } catch (error) {
     res.status(500).json({ message: "Error fetching data" });
   }

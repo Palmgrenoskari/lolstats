@@ -1,7 +1,6 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
-API_KEY = LEAGUE_API_KEY;
+const API_KEY = process.env.LEAGUE_API_KEY;
 
-module.exports = {
-  API_KEY,
-};
+export { API_KEY };
