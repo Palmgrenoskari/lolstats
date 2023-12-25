@@ -19,7 +19,10 @@ const Items = ({ items }) => {
       <h2>Items</h2>
       {/* Include a filter here to only show purchasable items */}
       {Object.values(items)
+        // Only purchasable items
         .filter((item) => item.gold.purchasable === true)
+        // 11 stands for Summoner's Rift which is the main mode of the game
+        .filter((item) => item.maps["11"] === true)
         .map((item) => (
           <Link key={item.image.full} to={`/items/${item.name}`}>
             <img
